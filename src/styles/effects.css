@@ -1,0 +1,13 @@
+.cursor-glow{position:fixed;left:0;top:0;width:260px;height:260px;border-radius:50%;pointer-events:none;z-index:70;opacity:0;transform:translate(-50%,-50%);background:radial-gradient(circle,#1769d22b,#1769d20f 35%,transparent 72%);mix-blend-mode:var(--cursor-blend)}
+.cursor-ring{position:fixed;left:0;top:0;width:34px;height:34px;border:1px solid var(--cursor-ring);border-radius:50%;pointer-events:none;z-index:72;opacity:0;transform:translate(-50%,-50%);box-shadow:0 0 18px #1769d259,inset 0 0 10px #1769d21a;transition:width .2s,height .2s,background .2s,border-color .2s}
+.cursor-dot{position:fixed;left:0;top:0;width:5px;height:5px;border-radius:50%;background:var(--cursor-dot);pointer-events:none;z-index:73;opacity:0;transform:translate(-50%,-50%);box-shadow:0 0 12px var(--bright),0 0 24px var(--blue)}
+body.cursor-on .cursor-glow,body.cursor-on .cursor-ring,body.cursor-on .cursor-dot{opacity:1}
+body.cursor-on,body.cursor-on a,body.cursor-on button{cursor:none}
+/* Show the native pointer over anything clickable; the ring still follows and grows */
+body.cursor-on a,body.cursor-on button,body.cursor-on summary,body.cursor-on .project-card{cursor:pointer}
+.cursor-ring.hovering~.cursor-dot{opacity:0}
+.cursor-ring.hovering{width:54px;height:54px;background:#1769d21f;border-color:var(--cursor-hover)}
+@media(hover:none),(pointer:coarse){
+  .cursor-glow,.cursor-ring,.cursor-dot{display:none}
+  body,body a,body button{cursor:auto}
+}

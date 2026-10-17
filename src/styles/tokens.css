@@ -1,0 +1,30 @@
+/* Dark theme — values match the original reference file */
+:root{
+  color-scheme:dark;
+  --bg:#080d18;--panel:#101a2b;--panel2:#14233a;--text:#f7f9ff;--muted:#b8c4d8;
+  --blue:#1769d2;--bright:#8bb6ff;--border:rgba(139,182,255,.18);
+  --max:1160px;--radius:22px;
+  --soft-text:#dce6f8;--menu-bg:#0b1322;
+
+  --strong:#fff;--on-blue:#f7f9ff;
+  --glow-1:rgba(23,105,210,.13);--glow-2:rgba(23,105,210,.1);
+  --header-bg:rgba(8,13,24,.88);--header-border:rgba(139,182,255,.12);--cta-border:rgba(139,182,255,.5);
+  --grad-text:linear-gradient(100deg,#fff,#8bb6ff 55%,#3989ff);
+  --outline-bg:#101a2b73;--outline-border:#8bb6ff70;--outline-hover-bg:#1769d222;
+  --panel-bg:linear-gradient(145deg,#14233ad1,#0c1422f2);
+  --panel-shadow:0 12px 35px #0002;--panel-shadow-hover:0 22px 50px #0004;--border-strong:#8bb6ff70;
+  --icon-bg:#1769d22b;--icon-border:#8bb6ff3d;--chip-bg:#8bb6ff0d;
+  --surface-case:#101a2bb0;--surface-skill:#101a2b8c;--surface-trust:#101a2ba6;--surface-faq:#101a2ba8;--surface-form:#101a2bcc;
+  --backtop-bg:#101a2be8;
+  --ring:#8bb6ff4d;--ring-2:#8bb6ff30;
+  --orbit-bg:radial-gradient(circle at 38% 32%,#1c467a,#0c1a30 52%,#080d18 74%);
+  --orbit-shadow:0 0 85px #1769d224,inset 0 0 55px #1769d21f;
+  --code-bg:#050a14e0;--code-border:#8bb6ff52;--code-shadow:0 24px 55px #0006;
+  --float-bg:#101a2bf0;--float-shadow:0 15px 40px #0004;
+  --preview-bg:#0b1423;
+  --mock-bg:#0d1728;--mock-top:#15243a;--mock-border:#8bb6ff40;--mock-shadow:0 18px 45px #0005;
+  --mock-sub:#aebed6;--mock-block-border:#8bb6ff2b;--mock-block-bg:linear-gradient(145deg,#17345a,#101a2b);--mock-post:#14243a;
+  --mono-bg:linear-gradient(145deg,#173f70,#0a1220);--mono-border:#8bb6ff8c;
+  --field-bg:#080f1d;--field-border:#8bb6ff38;
+  --cursor-ring:#8bb6ffd9;--cursor-dot:#fff;--cursor-hover:#fff;--cursor-blend:screen;
+}
