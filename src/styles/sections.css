@@ -12,8 +12,8 @@
 .hero-proof{display:flex;flex-wrap:wrap;gap:17px 24px;margin-top:32px;color:var(--muted);font-size:.85rem}
 .hero-proof span:before{content:"✦";color:var(--bright);margin-right:8px}
 .hero-visual{min-height:430px;position:relative;display:grid;place-items:center}
-.visual-glow{position:absolute;width:330px;aspect-ratio:1;border-radius:50%;background:#1769d230;filter:blur(70px)}
-.visual-orbit{position:relative;width:min(390px,78vw);aspect-ratio:1;border:1px solid var(--ring);border-radius:50%;display:grid;place-items:center;background:var(--orbit-bg);box-shadow:var(--orbit-shadow)}
+.visual-glow{position:absolute;width:330px;max-width:100%;aspect-ratio:1;border-radius:50%;background:#1769d230;filter:blur(70px)}
+.visual-orbit{position:relative;width:min(390px,78vw,88%);aspect-ratio:1;border:1px solid var(--ring);border-radius:50%;display:grid;place-items:center;background:var(--orbit-bg);box-shadow:var(--orbit-shadow)}
 .visual-orbit:before,.visual-orbit:after{content:"";position:absolute;inset:10%;border:1px solid var(--ring);border-radius:50%;transform:rotate(-30deg) scaleY(.42)}
 .visual-orbit:after{inset:-8%;transform:rotate(38deg) scaleY(.28);border-color:var(--ring-2)}
 .code-window{z-index:1;position:relative;width:76%;padding:19px;border:1px solid var(--code-border);border-radius:16px;background:var(--code-bg);box-shadow:var(--code-shadow);transform:rotate(-3deg)}
@@ -144,7 +144,7 @@ textarea{min-height:125px;resize:vertical}
 .form-note{color:var(--muted);font-size:.78rem;margin:12px 0 0}
 .form-note--success{color:var(--bright)}
 .form-note--error{color:#e5484d}
-.honeypot{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.honeypot{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);opacity:0;pointer-events:none}
 .btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
 
 /* Responsive */
@@ -177,4 +177,26 @@ textarea{min-height:125px;resize:vertical}
   .form-grid{grid-template-columns:1fr}
   .field.full{grid-column:auto}
   .contact-intro,.contact-form{padding:22px}
+}
+
+/* Single-column layouts (tablet & phone): consistent centered alignment */
+@media(max-width:900px){
+  .hero-content,.case-side,.about-copy{text-align:center}
+  .hero-name,.hero-copy{margin-inline:auto}
+  .actions,.hero-proof{justify-content:center}
+  .skill-group,.contact-method{text-align:left}
+}
+/* Tablet: keep the last, shorter row of 3-per-row / 2-per-row grids centered */
+@media(min-width:651px) and (max-width:900px){
+  .process-grid,.why-grid{display:flex;flex-wrap:wrap;justify-content:center}
+  .process-grid>*{flex:0 1 calc((100% - 40px)/3)}
+  .why-grid>*{flex:0 1 calc((100% - 20px)/2)}
+}
+@media(max-width:650px){
+  .contact-intro{text-align:center}
+}
+/* Very small phones: keep the hero eyebrow on one centered line */
+@media(max-width:380px){
+  .hero .eyebrow{font-size:.7rem;letter-spacing:.08em}
+  .hero .eyebrow:before{display:none}
 }

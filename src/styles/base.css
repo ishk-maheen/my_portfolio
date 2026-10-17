@@ -39,8 +39,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:none}
 @media(max-width:650px){
   .container{width:min(calc(100% - 30px),var(--max))}
   section{padding:70px 0}
-  .section-heading{margin-bottom:30px;text-align:left}
-  .section-heading .eyebrow{justify-content:flex-start}
+  .section-heading{margin-bottom:30px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
