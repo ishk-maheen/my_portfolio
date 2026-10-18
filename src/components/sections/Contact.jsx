@@ -4,6 +4,12 @@ import { formOptions } from "../../data/content";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 import ContactMethod from "../cards/ContactMethod";
+import GithubIcon from "../ui/GithubIcon";
+import EmailIcon from "../ui/EmailIcon";
+import LinkedinIcon from "../ui/LinkedinIcon";
+import FacebookIcon from "../ui/FacebookIcon";
+import InquiryIcon from "../ui/InquiryIcon";
+import WhatsappIcon from "../ui/WhatsappIcon";
 
 const ENDPOINT = "https://formsubmit.co/ajax/";
 const INITIAL_NOTE = "Your inquiry is sent directly to my email inbox. I'll reply to the email address you enter.";
@@ -78,9 +84,12 @@ export default function Contact() {
             <h3>Let's talk about your idea.</h3>
             <p>Share a short overview of your business, project goals and the features you need. I'll use that context to understand how I may be able to help.</p>
             <div className="contact-methods">
-              <ContactMethod external href={site.linkedin} icon="in" title="LinkedIn" text="Connect professionally" />
-              <ContactMethod external href={site.github} icon="</>" title="GitHub" text="Explore repositories" />
-              <ContactMethod href="#contact-form" icon="✉" title="Project inquiry" text="Send a message about your project" />
+              {site.email && <ContactMethod href={`mailto:${site.email}`} icon={<EmailIcon />} title="Email" text={site.email} />}
+              <ContactMethod external href={site.whatsapp} icon={<WhatsappIcon />} title="WhatsApp" text="Chat with me directly" />
+              <ContactMethod external href={site.linkedin} icon={<LinkedinIcon />} title="LinkedIn" text="Connect professionally" />
+              <ContactMethod external href={site.github} icon={<GithubIcon />} title="GitHub" text="Explore repositories" />
+              <ContactMethod external href={site.facebook} icon={<FacebookIcon />} title="Facebook" text="Message or follow me" />
+              <ContactMethod href="#contact-form" icon={<InquiryIcon />} title="Project inquiry" text="Send a message about your project" />
             </div>
           </div>
           <form className="contact-form reveal" id="contact-form" onSubmit={onSubmit}>
@@ -111,7 +120,7 @@ export default function Contact() {
                   {formOptions.timeline.map((o) => <option key={o}>{o}</option>)}
                 </select>
               </div>
-              <div className="field full">
+              <div className="field full field-grow">
                 <label htmlFor="message">Tell me about your project *</label>
                 <textarea id="message" name="message" required placeholder="What are you building, who is it for, and what should it do?" value={form.message} onChange={update} />
               </div>

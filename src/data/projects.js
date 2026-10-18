@@ -4,8 +4,6 @@ import physicalAi from "../assets/projects/physical-ai.jpg";
 import embel from "../assets/projects/embel.jpg";
 import bodrin from "../assets/projects/bodrin-coffee.jpg";
 
-const GITHUB_PROFILE = "https://github.com/ishk-maheen";
-
 export const projects = [
   {
     mockTitle: "Feedora",
@@ -16,7 +14,7 @@ export const projects = [
     text: "A social publishing platform that brings posts, comments and user profiles together in one responsive experience.",
     chips: ["React", "Node.js", "Express", "MongoDB", "Cloudinary"],
     demo: "https://mern-stack-blog-social-media-app-fu.vercel.app/",
-    code: { label: "GitHub profile", href: GITHUB_PROFILE },
+    code: { label: "GitHub repository", href: "https://github.com/ishk-maheen/mern-stack-blog-social-media-app" },
   },
   {
     mockTitle: "Customer Service",
@@ -27,7 +25,7 @@ export const projects = [
     text: "A web application project focused on organizing customer service information and related management workflows.",
     chips: ["Web UI", "Application workflow", "Responsive design"],
     demo: "https://customer-services-management-system-cyan.vercel.app/",
-    code: { label: "GitHub profile", href: GITHUB_PROFILE },
+    code: { label: "GitHub repository", href: "https://github.com/ishk-maheen/customer-services-management-system" },
   },
   {
     mockTitle: "Physical AI & Robotics",

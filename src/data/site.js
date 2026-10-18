@@ -6,6 +6,8 @@ export const site = {
   portrait,
   linkedin: "https://www.linkedin.com/in/ishkmaheen/",
   github: "https://github.com/ishk-maheen",
+  facebook: "https://www.facebook.com/ishkmaheen24",
+  whatsapp: "https://wa.me/923203401940",
   // Inquiry inbox (owner-supplied); override with VITE_CONTACT_EMAIL in .env
   email: import.meta.env.VITE_CONTACT_EMAIL || "maheenrashidsheikh786@gmail.com",
 };

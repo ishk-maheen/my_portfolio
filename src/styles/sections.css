@@ -124,8 +124,11 @@ details p{color:var(--muted);margin:12px 0 0}
 .contact-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:stretch}
 .contact-intro{padding:30px;border-radius:var(--radius);background:radial-gradient(circle at 10% 0,#1769d240,transparent 55%),var(--panel);border:1px solid var(--border)}
 .contact-intro p{color:var(--muted)}
-.contact-methods{display:grid;gap:12px;margin-top:26px}
+.contact-methods{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
 .contact-method{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid #ffffff2e;border-radius:14px;background:linear-gradient(135deg,#1769d2,#2455ad);color:#fff;box-shadow:0 10px 30px #1769d23b,inset 0 1px 0 #ffffff26;transition:transform .22s,box-shadow .22s}
+.contact-method:first-child,.contact-method:last-child{grid-column:1/-1}
+.contact-method:not(:first-child):not(:last-child){padding:14px;gap:10px}
+.contact-method:not(:first-child):not(:last-child) .contact-arrow{display:none}
 .contact-method:hover{transform:translateY(-3px);box-shadow:0 14px 35px #1769d261,inset 0 1px 0 #ffffff33}
 .contact-icon{flex:0 0 42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#ffffff22;border:1px solid #ffffff33;font-size:.95rem;font-weight:800;letter-spacing:-.02em}
 .contact-text{flex:1;min-width:0}
@@ -133,7 +136,13 @@ details p{color:var(--muted);margin:12px 0 0}
 .contact-method small{display:block;color:#ffffffcc;font-size:.8rem;overflow-wrap:anywhere}
 .contact-arrow{flex:0 0 auto;font-size:1.1rem;opacity:.85;transition:transform .22s,opacity .22s}
 .contact-method:hover .contact-arrow{opacity:1;transform:translate(2px,-2px)}
-.contact-form{padding:30px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface-form)}
+.contact-form{display:flex;flex-direction:column;padding:30px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface-form)}
+.contact-form .form-grid{flex:1}
+@media(min-width:901px){
+  .contact-form .form-grid{grid-template-rows:auto auto auto 1fr auto}
+  .field-grow{grid-template-rows:auto 1fr}
+  .field-grow textarea{height:100%}
+}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
 .field{display:grid;gap:7px}
 .field.full{grid-column:1/-1}
@@ -177,6 +186,9 @@ textarea{min-height:125px;resize:vertical}
   .form-grid{grid-template-columns:1fr}
   .field.full{grid-column:auto}
   .contact-intro,.contact-form{padding:22px}
+  .contact-methods{grid-template-columns:1fr}
+  .contact-method:not(:first-child):not(:last-child){padding:14px 18px;gap:14px}
+  .contact-method:not(:first-child):not(:last-child) .contact-arrow{display:inline}
 }
 
 /* Single-column layouts (tablet & phone): consistent centered alignment */
