@@ -4,7 +4,6 @@ import ExternalLink from "../ui/ExternalLink";
 import GithubIcon from "../ui/GithubIcon";
 import LinkedinIcon from "../ui/LinkedinIcon";
 import FacebookIcon from "../ui/FacebookIcon";
-import WhatsappIcon from "../ui/WhatsappIcon";
 
 // "Learning SEO" is a learning topic, not an offered service, so it stays out of this list.
 const offered = services.filter((s) => s.tag !== "Currently learning");
@@ -26,7 +25,6 @@ export default function Footer() {
             <ExternalLink className="footer-social-link" href={site.linkedin} aria-label="LinkedIn profile"><LinkedinIcon /></ExternalLink>
             <ExternalLink className="footer-social-link" href={site.github} aria-label="GitHub profile"><GithubIcon /></ExternalLink>
             <ExternalLink className="footer-social-link" href={site.facebook} aria-label="Facebook profile"><FacebookIcon /></ExternalLink>
-            <ExternalLink className="footer-social-link" href={site.whatsapp} aria-label="Chat on WhatsApp"><WhatsappIcon /></ExternalLink>
           </div>
         </div>
 
@@ -55,7 +53,6 @@ export default function Footer() {
             <li><ExternalLink href={site.linkedin}>LinkedIn</ExternalLink></li>
             <li><ExternalLink href={site.github}>GitHub</ExternalLink></li>
             <li><ExternalLink href={site.facebook}>Facebook</ExternalLink></li>
-            <li><ExternalLink href={site.whatsapp}>WhatsApp</ExternalLink></li>
           </ul>
         </div>
       </div>

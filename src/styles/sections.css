@@ -1,16 +1,13 @@
 /* Hero */
 .hero{min-height:680px;padding:88px 0 90px;display:grid;align-items:center;position:relative;isolation:isolate}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px}
-.hero-name{display:flex;width:fit-content;align-items:center;gap:12px;margin:22px 0 0;padding:7px 20px 7px 7px;border:1px solid var(--border-strong);border-radius:999px;background:var(--panel-bg);box-shadow:0 8px 28px #1769d233;font-size:1.05rem;font-weight:750;letter-spacing:-.01em}
-.hero-avatar{display:block;overflow:hidden;width:38px;height:38px;border-radius:50%;border:1px solid #8bb6ff8c;box-shadow:0 0 20px #1769d259;background:var(--blue)}
-.hero-avatar img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(2.1);transform-origin:50% 27%}
-.hero-name+h1{margin-top:18px}
 .hero-portrait{position:relative;z-index:1;display:block;width:88%;height:auto;aspect-ratio:1/1;border-radius:50%;object-fit:cover;object-position:center 20%;border:3px solid #8bb6ff66;box-shadow:0 0 70px #1769d27a,0 0 0 12px #1769d21f}
 .hero-copy{max-width:620px;color:var(--muted);font-size:1.08rem}
 .hero-copy strong{color:var(--strong)}
 .actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
-.hero-proof{display:flex;flex-wrap:wrap;gap:17px 24px;margin-top:32px;color:var(--muted);font-size:.85rem}
-.hero-proof span:before{content:"✦";color:var(--bright);margin-right:8px}
+.hero-proof{display:flex;flex-wrap:nowrap;gap:8px;margin-top:34px;color:var(--text);font-size:.8rem}
+.hero-proof span{display:inline-flex;align-items:center;white-space:nowrap;padding:7px 12px;border:1px solid var(--border);border-radius:999px;background:var(--panel-bg)}
+.hero-proof span:before{content:"";display:inline-block;width:6px;height:6px;margin-right:8px;flex:none;border-radius:50%;background:var(--bright);vertical-align:middle}
 .hero-visual{min-height:430px;position:relative;display:grid;place-items:center}
 .visual-glow{position:absolute;width:330px;max-width:100%;aspect-ratio:1;border-radius:50%;background:#1769d230;filter:blur(70px)}
 .visual-orbit{position:relative;width:min(390px,78vw,88%);aspect-ratio:1;border:1px solid var(--ring);border-radius:50%;display:grid;place-items:center;background:var(--orbit-bg);box-shadow:var(--orbit-shadow)}
@@ -24,19 +21,12 @@
 .code-line:nth-of-type(3){width:76%}
 .code-line:nth-of-type(4){width:58%}
 .code-line:nth-of-type(5){width:88%}
-.float-card{position:absolute;z-index:3;padding:12px 15px;background:var(--float-bg);border:1px solid var(--border);border-radius:13px;box-shadow:var(--float-shadow);animation:float 5s ease-in-out infinite}
-.float-card strong{display:block;font-size:.9rem}
-.float-card small{color:var(--muted);font-size:.76rem}
-.float-one{top:38px;left:-2px}
-.float-two{right:-8px;top:175px;animation-delay:-1.6s}
-.float-three{bottom:27px;left:10px;animation-delay:-3s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
 /* Services */
 .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .feature-list{list-style:none;padding:0;margin:0;display:grid;gap:9px;color:var(--soft-text);font-size:.91rem}
-.feature-list li:before{content:"↗";color:var(--bright);margin-right:9px}
+.feature-list li:before{content:"";display:inline-block;width:6px;height:6px;margin-right:10px;border-radius:50%;background:var(--bright);vertical-align:middle}
 .service-tag{display:inline-block;margin-top:20px;color:var(--bright);font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800}
 
 /* Projects */
@@ -93,9 +83,6 @@
 .case-step p{color:var(--muted);margin:0;font-size:.9rem}
 
 /* Why / Process */
-.why-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-.why-card h3{margin-bottom:9px}
-.why-card p{font-size:.9rem;margin-bottom:0}
 .process-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 .process-card{padding:20px}
 .process-num{color:var(--bright);font-size:.8rem;letter-spacing:.1em;font-weight:850}
@@ -124,11 +111,8 @@ details p{color:var(--muted);margin:12px 0 0}
 .contact-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:stretch}
 .contact-intro{padding:30px;border-radius:var(--radius);background:radial-gradient(circle at 10% 0,#1769d240,transparent 55%),var(--panel);border:1px solid var(--border)}
 .contact-intro p{color:var(--muted)}
-.contact-methods{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.contact-methods{display:grid;gap:12px;margin-top:26px}
 .contact-method{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid #ffffff2e;border-radius:14px;background:linear-gradient(135deg,#1769d2,#2455ad);color:#fff;box-shadow:0 10px 30px #1769d23b,inset 0 1px 0 #ffffff26;transition:transform .22s,box-shadow .22s}
-.contact-method:first-child,.contact-method:last-child{grid-column:1/-1}
-.contact-method:not(:first-child):not(:last-child){padding:14px;gap:10px}
-.contact-method:not(:first-child):not(:last-child) .contact-arrow{display:none}
 .contact-method:hover{transform:translateY(-3px);box-shadow:0 14px 35px #1769d261,inset 0 1px 0 #ffffff33}
 .contact-icon{flex:0 0 42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#ffffff22;border:1px solid #ffffff33;font-size:.95rem;font-weight:800;letter-spacing:-.02em}
 .contact-text{flex:1;min-width:0}
@@ -163,46 +147,38 @@ textarea{min-height:125px;resize:vertical}
   .hero{padding-top:75px}
   .hero-visual{min-height:390px}
   .services-grid,.project-grid{grid-template-columns:1fr 1fr}
-  .why-grid{grid-template-columns:1fr 1fr}
   .process-grid{grid-template-columns:repeat(3,1fr)}
   .about-grid,.contact-wrap,.case-study{grid-template-columns:1fr}
   .case-side{position:static}
 }
 @media(max-width:650px){
+  .hero-proof{flex-wrap:wrap}
   /* Must follow .project-card{padding:0}: the reference lets this override it on mobile */
   .panel{padding:22px}
   .hero{min-height:auto;padding:65px 0}
   .hero h1{font-size:clamp(2.3rem,12vw,3.7rem)}
   .hero-visual{min-height:330px}
   .visual-orbit{width:min(290px,75vw)}
-  .float-one{left:0;top:12px}
-  .float-two{right:0;top:145px}
-  .float-three{bottom:8px;left:0}
-  .float-card{padding:10px 12px}
-  .services-grid,.project-grid,.why-grid,.process-grid,.skill-groups{grid-template-columns:1fr}
+  .services-grid,.project-grid,.process-grid,.skill-groups{grid-template-columns:1fr}
   .project-card{padding:0}
   .project-preview{min-height:175px;padding:15px}
   .project-body{padding:21px}
   .form-grid{grid-template-columns:1fr}
   .field.full{grid-column:auto}
   .contact-intro,.contact-form{padding:22px}
-  .contact-methods{grid-template-columns:1fr}
-  .contact-method:not(:first-child):not(:last-child){padding:14px 18px;gap:14px}
-  .contact-method:not(:first-child):not(:last-child) .contact-arrow{display:inline}
 }
 
 /* Single-column layouts (tablet & phone): consistent centered alignment */
 @media(max-width:900px){
   .hero-content,.case-side,.about-copy{text-align:center}
-  .hero-name,.hero-copy{margin-inline:auto}
+  .hero-copy{margin-inline:auto}
   .actions,.hero-proof{justify-content:center}
   .skill-group,.contact-method{text-align:left}
 }
 /* Tablet: keep the last, shorter row of 3-per-row / 2-per-row grids centered */
 @media(min-width:651px) and (max-width:900px){
-  .process-grid,.why-grid{display:flex;flex-wrap:wrap;justify-content:center}
+  .process-grid{display:flex;flex-wrap:wrap;justify-content:center}
   .process-grid>*{flex:0 1 calc((100% - 40px)/3)}
-  .why-grid>*{flex:0 1 calc((100% - 20px)/2)}
 }
 @media(max-width:650px){
   .contact-intro{text-align:center}

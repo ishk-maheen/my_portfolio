@@ -7,7 +7,6 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/ishkmaheen/",
   github: "https://github.com/ishk-maheen",
   facebook: "https://www.facebook.com/ishkmaheen24",
-  whatsapp: "https://wa.me/923203401940",
   // Inquiry inbox (owner-supplied); override with VITE_CONTACT_EMAIL in .env
   email: import.meta.env.VITE_CONTACT_EMAIL || "maheenrashidsheikh786@gmail.com",
 };
@@ -19,12 +18,6 @@ export const navLinks = [
   { href: "#about", label: "About" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
-];
-
-export const heroFloatCards = [
-  { cls: "float-one", title: "Responsive UI", text: "Designed for every screen" },
-  { cls: "float-two", title: "MERN Stack", text: "Modern web applications" },
-  { cls: "float-three", title: "AI + SEO", text: "Exploring what's next" },
 ];
 
 export const heroProof = ["Responsive web experiences", "Clear project communication", "Business-focused approach"];

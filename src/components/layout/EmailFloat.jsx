@@ -1,10 +1,11 @@
 import { site } from "../../data/site";
-import WhatsappIcon from "../ui/WhatsappIcon";
+import EmailIcon from "../ui/EmailIcon";
 
-export default function WhatsappFloat() {
+export default function EmailFloat() {
+  if (!site.email) return null;
   return (
-    <a className="whatsapp-float" href={site.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-      <WhatsappIcon size={26} />
+    <a className="email-float" href={`mailto:${site.email}`} aria-label="Send an email">
+      <EmailIcon size={24} />
     </a>
   );
 }

@@ -9,7 +9,6 @@ import EmailIcon from "../ui/EmailIcon";
 import LinkedinIcon from "../ui/LinkedinIcon";
 import FacebookIcon from "../ui/FacebookIcon";
 import InquiryIcon from "../ui/InquiryIcon";
-import WhatsappIcon from "../ui/WhatsappIcon";
 
 const ENDPOINT = "https://formsubmit.co/ajax/";
 const INITIAL_NOTE = "Your inquiry is sent directly to my email inbox. I'll reply to the email address you enter.";
@@ -85,7 +84,6 @@ export default function Contact() {
             <p>Share a short overview of your business, project goals and the features you need. I'll use that context to understand how I may be able to help.</p>
             <div className="contact-methods">
               {site.email && <ContactMethod href={`mailto:${site.email}`} icon={<EmailIcon />} title="Email" text={site.email} />}
-              <ContactMethod external href={site.whatsapp} icon={<WhatsappIcon />} title="WhatsApp" text="Chat with me directly" />
               <ContactMethod external href={site.linkedin} icon={<LinkedinIcon />} title="LinkedIn" text="Connect professionally" />
               <ContactMethod external href={site.github} icon={<GithubIcon />} title="GitHub" text="Explore repositories" />
               <ContactMethod external href={site.facebook} icon={<FacebookIcon />} title="Facebook" text="Message or follow me" />

@@ -5,12 +5,6 @@ export const approachSteps = [
   { num: "04", title: "Review and improve", text: "Use feedback and testing to refine the experience. Business outcomes are reported only when measured and verified." },
 ];
 
-export const whyCards = [
-  { icon: "◎", title: "Understand the brief", text: "I clarify goals, required features and priorities before implementation." },
-  { icon: "↗", title: "Responsive by design", text: "I consider mobile, tablet and desktop layouts rather than designing for one screen only." },
-  { icon: "✓", title: "Honest communication", text: "I aim to keep scope, progress, limitations and handover expectations clear." },
-];
-
 export const processSteps = [
   { title: "Discovery", text: "Discuss goals, audience, required features and constraints." },
   { title: "Scope & proposal", text: "Agree deliverables, timeline, price and milestones." },

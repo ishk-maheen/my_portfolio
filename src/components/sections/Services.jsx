@@ -1,5 +1,6 @@
 import { services } from "../../data/services";
 import SectionHeading from "../ui/SectionHeading";
+import ServiceIcon from "../ui/ServiceIcon";
 
 export default function Services() {
   return (
@@ -11,7 +12,7 @@ export default function Services() {
         <div className="grid services-grid">
           {services.map((s) => (
             <article className="panel reveal" key={s.title}>
-              <div className="service-icon">{s.icon}</div>
+              <div className="service-icon"><ServiceIcon name={s.icon} /></div>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
               <ul className="feature-list">

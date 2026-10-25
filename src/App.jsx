@@ -4,12 +4,11 @@ import CursorEffects from "./components/effects/CursorEffects";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import BackToTop from "./components/layout/BackToTop";
-import WhatsappFloat from "./components/layout/WhatsappFloat";
+import EmailFloat from "./components/layout/EmailFloat";
 import Hero from "./components/sections/Hero";
 import Services from "./components/sections/Services";
 import Projects from "./components/sections/Projects";
 import Approach from "./components/sections/Approach";
-import WhyMe from "./components/sections/WhyMe";
 import Process from "./components/sections/Process";
 import About from "./components/sections/About";
 import Faq from "./components/sections/Faq";
@@ -28,7 +27,6 @@ export default function App() {
         <Services />
         <Projects />
         <Approach />
-        <WhyMe />
         <Process />
         <About />
         <Faq />
@@ -36,7 +34,7 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop show={showBackTop} />
-      <WhatsappFloat />
+      <EmailFloat />
     </>
   );
 }
