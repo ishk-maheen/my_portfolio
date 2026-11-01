@@ -5,8 +5,8 @@ export default function Process() {
   return (
     <section id="process">
       <div className="container">
-        <SectionHeading eyebrow="The workflow" title="From first message to" accent="launch.">
-          A simple process helps both sides understand what happens next.
+        <SectionHeading title="How a project" accent="runs.">
+          Five steps from the first message to launch.
         </SectionHeading>
         <div className="grid process-grid">
           {processSteps.map((s, i) => (

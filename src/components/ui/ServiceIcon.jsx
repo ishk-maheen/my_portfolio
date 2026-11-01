@@ -18,10 +18,11 @@ const paths = {
       <path d="M19 16v4M17 18h4" />
     </>
   ),
-  seo: (
+  optimize: (
     <>
-      <circle cx="11" cy="11" r="7" />
-      <path d="m20 20-4-4" />
+      <path d="M4 18a8 8 0 1 1 16 0" />
+      <path d="M12 18l4-6" />
+      <path d="M4 18h2M18 18h2" />
     </>
   ),
 };

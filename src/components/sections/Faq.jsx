@@ -5,12 +5,12 @@ export default function Faq() {
   return (
     <section id="faq">
       <div className="container">
-        <SectionHeading eyebrow="Frequently asked questions" title="Before we" accent="get started.">
-          Some useful details to help you decide whether we're a good fit for your project.
+        <SectionHeading title="" accent="FAQs">
+          Quick answers before we start.
         </SectionHeading>
         <div className="faq-list">
           {faqs.map((f) => (
-            <details className="reveal" key={f.q}>
+            <details className="reveal" name="faq" key={f.q}>
               <summary>{f.q}</summary>
               <p>{f.a}</p>
             </details>

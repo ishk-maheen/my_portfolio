@@ -1,16 +1,16 @@
 export const approachSteps = [
-  { num: "01", title: "Understand the goal", text: "Identify the user, main task, essential features and problem the project should address." },
-  { num: "02", title: "Plan the experience", text: "Organize the interface and application flow so key actions are clear and the layout works across screens." },
-  { num: "03", title: "Build and test", text: "Implement the agreed features, check responsive behavior and test the main user journeys." },
-  { num: "04", title: "Review and improve", text: "Use feedback and testing to refine the experience. Business outcomes are reported only when measured and verified." },
+  { num: "01", title: "Understand the goal", text: "Who it is for, what it should do and what problem it solves." },
+  { num: "02", title: "Plan the layout and flow", text: "Decide how pages and features connect so the main actions are easy to find on every screen." },
+  { num: "03", title: "Build and test", text: "Build the agreed features and test them on different screen sizes." },
+  { num: "04", title: "Review and refine", text: "Go through feedback, fix issues and polish the result." },
 ];
 
 export const processSteps = [
-  { title: "Discovery", text: "Discuss goals, audience, required features and constraints." },
-  { title: "Scope & proposal", text: "Agree deliverables, timeline, price and milestones." },
-  { title: "Development", text: "Build the agreed experience and share progress for review." },
-  { title: "Testing", text: "Check responsive behavior and agreed functionality." },
-  { title: "Handover", text: "Deploy or hand over the work with agreed documentation." },
+  { title: "Discovery", text: "We discuss your goals, audience, required features and any constraints." },
+  { title: "Strategy & Planning", text: "I outline the scope, timeline, price and milestones so expectations are clear." },
+  { title: "Development", text: "I build the agreed pages and features and share progress for your review." },
+  { title: "Testing & Optimization", text: "I check responsive behavior, test the main user flows and tidy up performance." },
+  { title: "Launch & Support", text: "The site goes live or is handed over, and any support afterwards is agreed upfront." },
 ];
 
 export const skillGroups = [
@@ -23,17 +23,17 @@ export const skillGroups = [
 export const trustStrip = ["Computer Science student", "Web Development Trainer", "Continuous learner"];
 
 export const faqs = [
-  { q: "What type of projects can I discuss with you?", a: "Responsive business websites, landing pages, frontend interfaces and MERN stack applications. The exact scope depends on the features and integrations required." },
-  { q: "Do you build frontend UI or complete applications?", a: "I work on frontend interfaces and MERN stack application projects. The proposal will clearly list which frontend, backend, database and integration features are included for your specific project." },
-  { q: "How much does a website cost?", a: "Pricing depends on pages, features, integrations, timeline and support required. Share your requirements to discuss a suitable scope and estimate." },
-  { q: "How long will a project take?", a: "The timeline depends on the agreed scope and complexity. I confirm the expected timeline after reviewing the requirements." },
-  { q: "Will the website work on mobile devices?", a: "Responsive behavior can be included in the agreed scope and tested on common screen sizes." },
-  { q: "Do you offer SEO services?", a: "Not yet. SEO is something I'm currently learning, so it isn't a client service. I don't guarantee search rankings or business results." },
-  { q: "Do you provide maintenance after launch?", a: "Maintenance, updates and ongoing support should be discussed and included in the agreement if needed." },
+  { q: "What kind of projects do you take on?", a: "Business websites, landing pages, frontend interfaces and MERN stack applications. Send me the details and I'll tell you honestly whether it's a good fit." },
+  { q: "Do you build only the frontend, or full applications too?", a: "Both. I build frontend interfaces and full MERN applications. Before we start, I'll list exactly what is included: frontend, backend, database and any integrations." },
+  { q: "How much will it cost?", a: "It depends on the number of pages, the features, integrations and timeline. Tell me what you need and I'll give you an estimate." },
+  { q: "How long will it take?", a: "That depends on the scope. I'll give you a timeline once I've seen the requirements." },
+  { q: "Will the website work on mobile?", a: "Yes. I build every page to be responsive and test it on common screen sizes." },
+  { q: "Do you offer SEO?", a: "Not yet. I'm still learning SEO, so I don't sell it as a service and I can't promise search rankings." },
+  { q: "Do you offer support after launch?", a: "Yes, if we agree on it beforehand. Tell me what updates or maintenance you expect and we'll include it in the plan." },
 ];
 
 export const formOptions = {
-  service: ["Website UI / Frontend Development", "MERN Stack Web Application", "AI-Powered Prototype", "Not sure yet"],
+  service: ["MERN Stack Web Development", "Frontend Development", "AI Powered Web Application", "Website Optimization and Maintenance", "Not sure yet"],
   budget: ["Not decided", "Under PKR 25,000", "PKR 25,000 to 60,000", "PKR 60,000 to 150,000", "PKR 150,000+", "Other / discuss first"],
   timeline: ["Flexible", "Within 1 to 2 weeks", "Within a month", "More than a month"],
 };

@@ -3,10 +3,6 @@ import { services } from "../../data/services";
 import ExternalLink from "../ui/ExternalLink";
 import GithubIcon from "../ui/GithubIcon";
 import LinkedinIcon from "../ui/LinkedinIcon";
-import FacebookIcon from "../ui/FacebookIcon";
-
-// "Learning SEO" is a learning topic, not an offered service, so it stays out of this list.
-const offered = services.filter((s) => s.tag !== "Currently learning");
 
 export default function Footer() {
   return (
@@ -14,17 +10,15 @@ export default function Footer() {
       <div className="container footer-top">
         <div className="footer-brand">
           <a className="brand" href="#home">
-            <span className="brand-mark">M</span>
+            <img className="brand-logo" src={site.logo} alt="" width="50" height="50" />
             <span>
               {site.name}
-              <small>{site.role}</small>
             </span>
           </a>
-          <p>Turning business ideas into responsive websites and useful web applications.</p>
+          <p>MERN Stack and Agentic AI developer building responsive websites and practical web applications.</p>
           <div className="footer-social">
             <ExternalLink className="footer-social-link" href={site.linkedin} aria-label="LinkedIn profile"><LinkedinIcon /></ExternalLink>
             <ExternalLink className="footer-social-link" href={site.github} aria-label="GitHub profile"><GithubIcon /></ExternalLink>
-            <ExternalLink className="footer-social-link" href={site.facebook} aria-label="Facebook profile"><FacebookIcon /></ExternalLink>
           </div>
         </div>
 
@@ -40,7 +34,7 @@ export default function Footer() {
         <div className="footer-col">
           <p className="footer-title">What I do</p>
           <ul>
-            {offered.map((s) => (
+            {services.map((s) => (
               <li key={s.title}><a href="#services">{s.title}</a></li>
             ))}
           </ul>
@@ -52,14 +46,12 @@ export default function Footer() {
             <li><a href="#contact">Start a project ↗</a></li>
             <li><ExternalLink href={site.linkedin}>LinkedIn</ExternalLink></li>
             <li><ExternalLink href={site.github}>GitHub</ExternalLink></li>
-            <li><ExternalLink href={site.facebook}>Facebook</ExternalLink></li>
           </ul>
         </div>
       </div>
 
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} {site.name}. Built with care.</span>
-        <a className="footer-top-link" href="#home">Back to top ↑</a>
+        <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
       </div>
     </footer>
   );

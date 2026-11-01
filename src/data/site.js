@@ -1,9 +1,11 @@
 import portrait from "../assets/about.jpeg";
+import logo from "../assets/logo.png";
 
 export const site = {
   name: "Maheen Sheikh",
   role: "Freelance Web Developer",
   portrait,
+  logo,
   linkedin: "https://www.linkedin.com/in/ishkmaheen/",
   github: "https://github.com/ishk-maheen",
   facebook: "https://www.facebook.com/ishkmaheen24",
@@ -14,10 +16,7 @@ export const site = {
 export const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#projects", label: "Projects" },
-  { href: "#process", label: "Process" },
   { href: "#about", label: "About" },
-  { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
 
-export const heroProof = ["Responsive web experiences", "Clear project communication", "Business-focused approach"];

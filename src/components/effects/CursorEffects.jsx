@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import { canUsePointerEffects } from "../../hooks/useMotion";
 
-const HOVER_SELECTOR = "a,button,.panel";
+// Over clickable elements the custom cursor hides and only the normal pointer shows.
+const HOVER_SELECTOR = "a,button,summary,input,textarea,select";
 
 export default function CursorEffects() {
   const glow = useRef(null);
@@ -34,8 +35,8 @@ export default function CursorEffects() {
       frame = requestAnimationFrame(animate);
     };
     const onOver = (e) =>
-      ring.current.classList.toggle("hovering", !!e.target.closest?.(HOVER_SELECTOR));
-    const onLeaveWindow = () => ring.current.classList.remove("hovering");
+      document.body.classList.toggle("cursor-over-ui", !!e.target.closest?.(HOVER_SELECTOR));
+    const onLeaveWindow = () => document.body.classList.remove("cursor-over-ui");
 
     window.addEventListener("pointermove", onMove, { passive: true });
     document.addEventListener("pointerover", onOver);
@@ -43,7 +44,7 @@ export default function CursorEffects() {
     animate();
 
     return () => {
-      document.body.classList.remove("cursor-on");
+      document.body.classList.remove("cursor-on", "cursor-over-ui");
       cancelAnimationFrame(frame);
       window.removeEventListener("pointermove", onMove);
       document.removeEventListener("pointerover", onOver);

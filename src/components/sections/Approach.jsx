@@ -5,9 +5,8 @@ export default function Approach() {
     <section id="case-studies">
       <div className="container case-study">
         <div className="case-side reveal">
-          <div className="eyebrow">My approach</div>
-          <h2>How I think through <span className="gradient-text">a project.</span></h2>
-          <p>Good development starts with understanding the purpose, not just writing code. Here is the structure I use to explain my work honestly and clearly.</p>
+          <h2>How I handle <span className="gradient-text">a project.</span></h2>
+          <p>I start by understanding what the project needs, then plan, build and test it.</p>
         </div>
         <div className="case-steps">
           {approachSteps.map((s) => (

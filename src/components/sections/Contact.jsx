@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { site } from "../../data/site";
 import { formOptions } from "../../data/content";
 import SectionHeading from "../ui/SectionHeading";
@@ -7,8 +7,6 @@ import ContactMethod from "../cards/ContactMethod";
 import GithubIcon from "../ui/GithubIcon";
 import EmailIcon from "../ui/EmailIcon";
 import LinkedinIcon from "../ui/LinkedinIcon";
-import FacebookIcon from "../ui/FacebookIcon";
-import InquiryIcon from "../ui/InquiryIcon";
 
 const ENDPOINT = "https://formsubmit.co/ajax/";
 const INITIAL_NOTE = "Your inquiry is sent directly to my email inbox. I'll reply to the email address you enter.";
@@ -21,16 +19,53 @@ const initialForm = {
   message: "",
 };
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+function validate(f) {
+  const errors = {};
+  if (f.name.trim().length < 2) errors.name = "Please enter your name.";
+  if (!f.email.trim()) errors.email = "Please enter your email address.";
+  else if (!EMAIL_RE.test(f.email.trim())) errors.email = "Please enter a valid email address, like you@example.com.";
+  if (f.message.trim().length < 10) errors.message = "Please describe your project in at least a few words (10 characters minimum).";
+  return errors;
+}
+
 export default function Contact() {
+  const formRef = useRef(null);
+  const [errors, setErrors] = useState({});
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState({ type: "idle", text: INITIAL_NOTE });
   const sending = status.type === "sending";
 
-  const update = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  const update = (e) => {
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+    // Clear a field's error as soon as the visitor starts fixing it.
+    if (errors[name]) setErrors((er) => ({ ...er, [name]: undefined }));
+  };
+
+  const fieldProps = (name) => ({
+    id: name,
+    name,
+    value: form[name],
+    onChange: update,
+    "aria-invalid": errors[name] ? "true" : undefined,
+    "aria-describedby": errors[name] ? `${name}-error` : undefined,
+  });
+  const fieldError = (name) =>
+    errors[name] ? <p className="field-error" id={`${name}-error`}>{errors[name]}</p> : null;
 
   const onSubmit = async (e) => {
     e.preventDefault();
     if (sending) return;
+    const found = validate(form);
+    setErrors(found);
+    const firstInvalid = Object.keys(found)[0];
+    if (firstInvalid) {
+      setStatus({ type: "error-fields", text: "Please fix the highlighted fields and try again." });
+      formRef.current?.elements[firstInvalid]?.focus();
+      return;
+    }
     if (!site.email) {
       setStatus({ type: "error", text: "The contact email is not configured. Set VITE_CONTACT_EMAIL in the .env file." });
       return;
@@ -75,33 +110,33 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="container">
-        <SectionHeading eyebrow="Have a project in mind?" title="Let's build your next" accent="website.">
-          Tell me what you're trying to achieve. We can discuss the requirements and work out a practical next step.
+        <SectionHeading title="Let's talk about your" accent="project.">
+          Tell me what you need and I'll reply by email.
         </SectionHeading>
         <div className="contact-wrap">
           <div className="contact-intro reveal">
-            <h3>Let's talk about your idea.</h3>
-            <p>Share a short overview of your business, project goals and the features you need. I'll use that context to understand how I may be able to help.</p>
+            <h3>Send me a message</h3>
+            <p>Share what you are building, who it is for and any deadline you have in mind.</p>
             <div className="contact-methods">
               {site.email && <ContactMethod href={`mailto:${site.email}`} icon={<EmailIcon />} title="Email" text={site.email} />}
-              <ContactMethod external href={site.linkedin} icon={<LinkedinIcon />} title="LinkedIn" text="Connect professionally" />
-              <ContactMethod external href={site.github} icon={<GithubIcon />} title="GitHub" text="Explore repositories" />
-              <ContactMethod external href={site.facebook} icon={<FacebookIcon />} title="Facebook" text="Message or follow me" />
-              <ContactMethod href="#contact-form" icon={<InquiryIcon />} title="Project inquiry" text="Send a message about your project" />
+              <ContactMethod external href={site.linkedin} icon={<LinkedinIcon />} title="LinkedIn" text="Message me on LinkedIn" />
+              <ContactMethod external href={site.github} icon={<GithubIcon />} title="GitHub" text="See my code" />
             </div>
           </div>
-          <form className="contact-form reveal" id="contact-form" onSubmit={onSubmit}>
+          <form className="contact-form reveal" id="contact-form" ref={formRef} onSubmit={onSubmit} noValidate>
             <div className="form-grid">
               <div className="field">
                 <label htmlFor="name">Your name *</label>
-                <input id="name" name="name" autoComplete="name" required placeholder="Name" value={form.name} onChange={update} />
+                <input {...fieldProps("name")} autoComplete="name" required placeholder="Your name" />
+                {fieldError("name")}
               </div>
               <div className="field">
                 <label htmlFor="email">Your email *</label>
-                <input id="email" name="email" type="email" autoComplete="email" required placeholder="you@gmail.com" value={form.email} onChange={update} />
+                <input {...fieldProps("email")} type="email" autoComplete="email" required placeholder="you@example.com" />
+                {fieldError("email")}
               </div>
               <div className="field full">
-                <label htmlFor="service">What do you need?</label>
+                <label htmlFor="service">Project type</label>
                 <select id="service" name="service" value={form.service} onChange={update}>
                   {formOptions.service.map((o) => <option key={o}>{o}</option>)}
                 </select>
@@ -119,13 +154,14 @@ export default function Contact() {
                 </select>
               </div>
               <div className="field full field-grow">
-                <label htmlFor="message">Tell me about your project *</label>
-                <textarea id="message" name="message" required placeholder="What are you building, who is it for, and what should it do?" value={form.message} onChange={update} />
+                <label htmlFor="message">Project description *</label>
+                <textarea {...fieldProps("message")} required placeholder="What are you building, who is it for, and what should it do?" />
+                {fieldError("message")}
               </div>
               <div className="field full">
                 <input type="text" name="_honey" className="honeypot" tabIndex={-1} autoComplete="off" aria-hidden="true" />
                 <Button type="submit" disabled={sending}>{sending ? "Sending…" : "Send Inquiry ↗"}</Button>
-                <p className={`form-note form-note--${status.type}`} id="formNote" role="status" aria-live="polite">
+                <p className={`form-note form-note--${status.type === "error-fields" ? "error" : status.type}`} id="formNote" role="status" aria-live="polite">
                   {status.text}
                   {status.type === "error" && site.email && (
                     <> <a className="text-link" href={`mailto:${site.email}`}>{site.email}</a>.</>

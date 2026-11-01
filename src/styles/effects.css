@@ -5,9 +5,11 @@ body.cursor-on .cursor-glow,body.cursor-on .cursor-ring,body.cursor-on .cursor-d
 body.cursor-on,body.cursor-on a,body.cursor-on button{cursor:none}
 /* Show the native pointer over anything clickable; the ring still follows and grows */
 body.cursor-on a,body.cursor-on button,body.cursor-on summary,body.cursor-on .project-card{cursor:pointer}
-.cursor-ring.hovering~.cursor-dot{opacity:0}
-.cursor-ring.hovering{width:54px;height:54px;background:#1769d21f;border-color:var(--cursor-hover)}
+body.cursor-on.cursor-over-ui .cursor-glow,body.cursor-on.cursor-over-ui .cursor-ring,body.cursor-on.cursor-over-ui .cursor-dot{opacity:0}
 @media(hover:none),(pointer:coarse){
   .cursor-glow,.cursor-ring,.cursor-dot{display:none}
   body,body a,body button{cursor:auto}
 }
+/* Form fields keep the normal text cursor */
+body.cursor-on input,body.cursor-on textarea{cursor:text}
+body.cursor-on select{cursor:pointer}

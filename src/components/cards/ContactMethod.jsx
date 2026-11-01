@@ -7,7 +7,7 @@ export default function ContactMethod({ href, external, icon, title, text }) {
         <b>{title}</b>
         <small>{text}</small>
       </span>
-      <span className="contact-arrow" aria-hidden="true">{external ? "↗" : "↓"}</span>
+      <span className="contact-arrow" aria-hidden="true">↗</span>
     </a>
   );
 }

@@ -8,10 +8,9 @@ export default function Header({ activeId }) {
     <header className="site-header">
       <div className="container nav">
         <a className="brand" href="#home">
-          <span className="brand-mark">M</span>
+          <img className="brand-logo" src={site.logo} alt="" width="50" height="50" />
           <span>
             {site.name}
-            <small>{site.role}</small>
           </span>
         </a>
         <nav className={`nav-links${open ? " open" : ""}`} id="navLinks" aria-label="Main navigation">

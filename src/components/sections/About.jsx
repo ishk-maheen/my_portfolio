@@ -1,4 +1,4 @@
-import { skillGroups, trustStrip } from "../../data/content";
+import { skillGroups } from "../../data/content";
 import { site } from "../../data/site";
 
 export default function About() {
@@ -17,10 +17,10 @@ export default function About() {
           />
         </div>
         <div className="about-copy reveal">
-          <div className="eyebrow">A little about me</div>
-          <h2>Developer mindset, <span className="gradient-text">trainer's clarity.</span></h2>
-          <p>I'm Maheen Sheikh, a Computer Science student and freelance web developer focused on responsive interfaces and web applications. I work with modern frontend technologies and the MERN stack, while expanding my knowledge of Agentic AI and SEO.</p>
-          <p>My experience as a Web Development and IT Foundation Trainer has helped me practice explaining technical concepts clearly and breaking complex tasks into manageable steps. I bring that structured approach to my development work too.</p>
+          <div className="eyebrow">About Me</div>
+          <h2>Working with me means <span className="gradient-text">clear communication.</span></h2>
+          <p>I'm Maheen Sheikh, a freelance web developer who builds responsive websites and MERN stack applications. I turn your requirements into something that looks good, works well on every device and is easy for your users to understand.</p>
+          <p>My background as a Web Development and IT Foundation Trainer means I explain things in plain language and share progress as the work moves forward, so you always know what is being built and why. I'm also exploring Agentic AI and learning SEO, so I can offer more over time.</p>
           <div className="skill-groups">
             {skillGroups.map((g) => (
               <div className="skill-group" key={g.title}>
@@ -28,9 +28,6 @@ export default function About() {
                 <span>{g.text}</span>
               </div>
             ))}
-          </div>
-          <div className="trust-strip">
-            {trustStrip.map((t) => <span key={t}>{t}</span>)}
           </div>
         </div>
       </div>

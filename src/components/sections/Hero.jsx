@@ -1,4 +1,4 @@
-import { heroProof, site } from "../../data/site";
+import { site } from "../../data/site";
 import Button from "../ui/Button";
 
 export default function Hero() {
@@ -6,27 +6,23 @@ export default function Hero() {
     <section className="hero" id="home">
       <div className="container hero-grid">
         <div className="hero-content">
-          <div className="eyebrow">Freelance Web Developer · MERN Stack</div>
-          <h1>I Turn Ideas Into <span className="gradient-text">Powerful Web Applications.</span></h1>
+          <div className="eyebrow">MERN Stack Developer | Agentic AI Developer</div>
+          <h1>I Turn Your Ideas Into <span className="gradient-text">Powerful Web Applications.</span></h1>
           <p className="hero-copy">
-            Need a modern website or web application for your business? I help turn ideas into{" "}
-            <strong>responsive, user-friendly digital experiences</strong> with thoughtful interfaces and modern web technologies.
+            I build <strong>responsive websites</strong>, <strong>MERN stack web applications</strong> and{" "}
+            <strong>AI solutions</strong> with clean interfaces and reliable code, so your idea works well on every device.
           </p>
           <div className="actions">
-            <Button href="#contact">Discuss Your Project <span>↗</span></Button>
-            <Button variant="outline" href="#projects">View My Work</Button>
-          </div>
-          <div className="hero-proof">
-            {heroProof.map((p) => <span key={p}>{p}</span>)}
+            <Button href="#contact">Let's Build Your Project <span aria-hidden="true">↗</span></Button>
+            <Button variant="outline" href="#projects">Explore My Work</Button>
           </div>
         </div>
         <div className="hero-visual">
-          <div className="visual-glow" />
           <div className="visual-orbit">
             <img
               className="hero-portrait"
               src={site.portrait}
-              alt={`Portrait of ${site.name}`}
+              alt={`${site.name}, MERN Stack and Agentic AI developer`}
               width="800"
               height="800"
               fetchpriority="high"
